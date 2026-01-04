@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build-and-push-prs:
-    if: ${{ github.repository == 'cilium/cilium-cli' }}
+    if: ${{ github.repository == 'cilium/cilium-cli' || barakharyati/cilium-cli }} #only change to run also on my fork 
     environment: ${{ github.ref_type == 'tag' && 'release' || 'ci' }}
     runs-on: ubuntu-24.04
 
